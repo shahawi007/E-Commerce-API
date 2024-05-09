@@ -32,7 +32,6 @@ exports.addtocart = catchAsync(async (req, res, next) => {
 
 exports.showcart = catchAsync(async (req, res, next) => {
   const userId = req.user.id;
-  // console.log(`userid:${userId}`);
 
   try {
     const cart = await Cart.findOne({ user: userId });

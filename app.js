@@ -8,12 +8,8 @@ const materialRouter = require("./routes/materialRoutes");
 const productRouter = require("./routes/productRoutes");
 const errorHandler = require("./controllers/errorController");
 const dotenv = require("dotenv");
-const User = require("./models/userModel");
-const materialController = require("./controllers/materialController");
 dotenv.config();
-// console.log(process.env.CLOUDINARY_CLOUD_NAME);
-// console.log(process.env.CLOUDINARY_API_KEY);
-// console.log(process.env.CLOUDINARY_SECRET_KEY);
+
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
@@ -21,9 +17,7 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/cart", cartRouter);
 app.use("/api/v1/materials", materialRouter);
 app.use("/api/v1/products", productRouter);
-// console.log(process.env.CLOUDINARY_CLOUD_NAME);
-// console.log(process.env.CLOUDINARY_API_KEY);
-// console.log(process.env.CLOUDINARY_SECRET_KEY);
+
 app.use(errorHandler);
 const DB = process.env.DATABASE.replace(
   "<password>",

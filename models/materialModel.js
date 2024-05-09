@@ -10,8 +10,7 @@ const materialSchema = new mongoose.Schema({
     type: Number,
     validate: {
       validator: function (value) {
-        // Custom validation to check if the value is a valid decimal
-        return !isNaN(parseFloat(value)) && isFinite(value) && value >= 0; // Check if the value is a valid number and non-negative
+        return !isNaN(parseFloat(value)) && isFinite(value) && value >= 0;
       },
       message: "Price must be a valid price",
     },
